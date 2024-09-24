@@ -13,7 +13,7 @@ const compat = new FlatCompat({
 });
 
 export default [
-	...compat.extends('eslint: recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'),
+	...compat.extends('eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'),
 	{
 		languageOptions: {
 			parser: tsParser,
