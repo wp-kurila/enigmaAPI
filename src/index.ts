@@ -11,9 +11,4 @@ const server = app.listen(PORT, () => {
 	console.log(`server started on port: ${PORT}`);
 });
 
-hello;
-1123;
-33;
-1;
-
 export { app, server };
