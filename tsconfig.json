@@ -7,7 +7,13 @@
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"outDir": "./dist",
-		"rootDir": "./src"
+		"rootDir": "./src",
+		"baseUrl": "./src",
+		"paths": {
+			"@middlewares/*": ["middlewares/*"],
+			"@routes/*": ["routes/*"],
+			"@libs/*": ["libs/*"]
+		}
 	},
 	"include": ["src/**/*"],
 	"exclude": ["node_modules"]

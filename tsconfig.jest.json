@@ -8,7 +8,13 @@
 		"forceConsistentCasingInFileNames": true,
 		"outDir": "./dist",
 		"rootDir": "./src",
-		"types": ["jest"]
+		"types": ["jest"],
+		"baseUrl": "./src",
+		"paths": {
+			"@middlewares/*": ["middlewares/*"],
+			"@routes/*": ["routes/*"],
+			"@libs/*": ["libs/*"]
+		}
 	},
 	"include": ["src/**/*", "tests/**/*"],
 	"exclude": ["node_modules"]
