@@ -10,31 +10,34 @@ import morganMiddleware from '@middlewares/morganMiddleware';
 import indexRouter from '@routes/indexRouter';
 import loggerRouter from '@routes/loggerRouter';
 
+import whatsappClient from '@libs/whatsappClient';
+
 dotenv.config();
+
+whatsappClient.initialize();
 
 const app = express();
 const PORT = process.env.port || 5050;
 
-// Use Helmet to secure Express app by setting various HTTP headers
 app.use(helmet());
-// Enable CORS with various options
 app.use(cors());
 
 app.use(morganMiddleware);
+app.use(express.json());
 
-// Use routes
 app.use('/', indexRouter);
 app.use('/logger', loggerRouter);
-// Swagger configuration options
+
 const swaggerOptions = {
 	swaggerDefinition: {
+		openapi: '3.0.0',
 		info: {
 			title: 'My Express API',
 			version: '1.0.0',
 			description: 'API documentation for my Express application',
 		},
 	},
-	apis: ['./src/routes/*.ts'], // Path to the API docs
+	apis: ['./src/routes/*.ts'],
 };
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
