@@ -5,7 +5,7 @@ const whatsappClient = new Client({
 	authStrategy: new LocalAuth(),
 	puppeteer: {
 		headless: true,
-		args: ['--enable-gpu', '--disable-setuid-sandbox'],
+		args: ['--enable-gpu'],
 	},
 });
 
