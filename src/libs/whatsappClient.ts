@@ -5,6 +5,8 @@ const whatsappClient = new Client({
 	authStrategy: new LocalAuth(),
 	puppeteer: {
 		executablePath: '/usr/bin/chromium-browser',
+		headless: false,
+		args: ['--no-sandbox'],
 	},
 });
 
