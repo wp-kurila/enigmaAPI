@@ -4,8 +4,7 @@ import qrcode from 'qrcode-terminal';
 const whatsappClient = new Client({
 	authStrategy: new LocalAuth(),
 	puppeteer: {
-		headless: true,
-		args: ['--enable-gpu'],
+		executablePath: '/usr/bin/chromium-browser',
 	},
 });
 
