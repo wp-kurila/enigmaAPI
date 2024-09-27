@@ -3,6 +3,9 @@ import qrcode from 'qrcode-terminal';
 
 const whatsappClient = new Client({
 	authStrategy: new LocalAuth(),
+	puppeteer: {
+		args: ['--no-sandbox', '--disable-setuid-sandbox'],
+	},
 });
 
 whatsappClient.on('qr', (qr) => qrcode.generate(qr, { small: true }));
