@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-// import { sendMessage } from '../services/messageService';
+import { sendMessage } from '../services/messageService';
 
 export const postMessage = async (req: Request, res: Response) => {
 	const errors = validationResult(req);
@@ -9,10 +9,9 @@ export const postMessage = async (req: Request, res: Response) => {
 	}
 
 	const { body } = req;
-	console.log(body);
 
 	try {
-		// await sendMessage(body);
+		await sendMessage(body);
 		res.send({ ok: true });
 	} catch (error) {
 		if (error instanceof Error) {

@@ -10,26 +10,17 @@ import morganMiddleware from '@middlewares/morganMiddleware';
 import indexRouter from '@routes/indexRouter';
 import loggerRouter from '@routes/loggerRouter';
 
-// import whatsappClient from '@libs/whatsappClient';
+import whatsappClient from '@libs/whatsappClient';
 
 dotenv.config();
 
-// whatsappClient.initialize();
+whatsappClient.initialize();
 
 const app = express();
 const PORT = process.env.port || 5050;
 
 app.use(helmet());
 app.use(cors());
-// Явно указываем источник запросов для CORS
-// const corsOptions = {
-// 	origin: 'http://localhost:3000', // Разрешаем только с этого источника
-// 	methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Разрешенные методы
-// 	credentials: true, // Если нужно передавать cookie
-// 	optionsSuccessStatus: 204, // Указываем корректный статус для успешных preflight запросов
-// };
-
-// app.use(cors(corsOptions));
 
 app.use(morganMiddleware);
 app.use(express.json());

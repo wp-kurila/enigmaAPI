@@ -1,8 +1,6 @@
 import { app, server } from '../src';
 import request from 'supertest';
 
-// import whatsappClient from '../src/libs/whatsappClient';
-
 jest.mock('../src/libs/whatsappClient', () => ({
 	initialize: jest.fn(),
 }));
