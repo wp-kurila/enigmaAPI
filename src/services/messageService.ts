@@ -24,5 +24,5 @@ export const sendMessage = async (body: Record<string, string>): Promise<void> =
 	// 	await bot.sendMessage(chatId, message);
 	// });
 
-	await bot.sendMessage(process.env.ALLOWED_CHAT_ID || '', message);
+	await bot.sendMessage(process.env.CHAT_ID || '', message);
 };
