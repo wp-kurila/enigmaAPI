@@ -1,7 +1,7 @@
 module.exports = {
 	apps: [
 		{
-			name: 'my-node-app',
+			name: 'enigmaApi',
 			script: 'npm',
 			args: 'start',
 			watch: false,
