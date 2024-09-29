@@ -6,7 +6,7 @@ const router: Router = Router();
 
 /**
  * @swagger
- * /api:
+ * /:
  *   post:
  *     description: Welcome to the TypeScript Express app
  *     requestBody:

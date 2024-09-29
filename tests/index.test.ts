@@ -1,7 +1,7 @@
 import { app, server } from '../src';
 import request from 'supertest';
 
-jest.mock('../src/libs/whatsappClient', () => ({
+jest.mock('../src/libs/telegram', () => ({
 	initialize: jest.fn(),
 }));
 

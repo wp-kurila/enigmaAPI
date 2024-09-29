@@ -10,11 +10,7 @@ import morganMiddleware from '@middlewares/morganMiddleware';
 import indexRouter from '@routes/indexRouter';
 import loggerRouter from '@routes/loggerRouter';
 
-import whatsappClient from '@libs/whatsappClient';
-
 dotenv.config();
-
-whatsappClient.initialize();
 
 const app = express();
 const PORT = process.env.port || 5050;
